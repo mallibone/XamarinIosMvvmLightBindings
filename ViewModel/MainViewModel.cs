@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
@@ -10,12 +11,10 @@ namespace MVVMLightBinding.ViewModel
 		private string _theResponse;
 		private RelayCommand _submitTextCommand;
 
-		/// <summary>
-		/// Initializes a new instance of the MainViewModel class.
-		/// </summary>
 		public MainViewModel ()
 		{
-			SubmitTextCommand = new RelayCommand (HandleSubmitTextCommand, () => CanExecuteSubmitText);
+		    Names = new ObservableCollection<string>();
+		    SubmitTextCommand = new RelayCommand (HandleSubmitTextCommand, () => CanExecuteSubmitText);
 			CanExecuteSubmitText = true;
 
 			TheResponse = "Awaiting your input";
@@ -55,6 +54,8 @@ namespace MVVMLightBinding.ViewModel
 			get;
 			set;
 		}
+
+	    public ObservableCollection<string> Names { get; set; }
 
 		private void HandleSubmitTextCommand ()
 		{
