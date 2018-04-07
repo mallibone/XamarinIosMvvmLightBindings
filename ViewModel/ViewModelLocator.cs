@@ -1,6 +1,5 @@
-using GalaSoft.MvvmLight;
+using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
 
 namespace MVVMLightBinding.ViewModel
 {

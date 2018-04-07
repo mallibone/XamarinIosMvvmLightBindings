@@ -32,8 +32,8 @@ namespace MVVMLightBinding
 				() => TextLabel.Text);
 
 			_textFieldBinding = this.SetBinding (
-				() => EntryTextField.Text)
-				.UpdateSourceTrigger ("EditingDidEnd")
+                () => EntryTextField.Text)
+                .ObserveSourceEvent ("EditingDidEnd")
 				.WhenSourceChanges (() => Vm.TheInput = EntryTextField.Text);
 
 			SubmitTextButton.SetCommand("TouchUpInside", Vm.SubmitTextCommand);
